@@ -2,10 +2,12 @@
   "name": "nextjs",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "post-update": "yarn upgrade --latest"
+    "dev": "start-storybook -p 3000",
+    "build": "build-storybook",
+    "start": "start-storybook -p 3000",
+    "post-update": "yarn upgrade --latest",
+    "storybook": "start-storybook -p 3000",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "next": "latest",
@@ -13,8 +15,14 @@
     "react-dom": "17.0.2"
   },
   "license": "MIT",
-  "keywords": [
-    "next"
-  ],
-  "description": "A \"Hello World\" application with multiple pages that shows how Next.js routing works."
+  "keywords": ["next"],
+  "description": "A \"Hello World\" application with multiple pages that shows how Next.js routing works.",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/react": "^6.4.9",
+    "babel-loader": "^8.2.3"
+  }
 }
