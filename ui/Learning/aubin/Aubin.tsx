@@ -6,7 +6,7 @@ import React from "react";
 export const Aubin = () => {
   return (
     <div>
-      This is Aubin's Component.
+      This is an even better component!
     </div>
   );
 };
