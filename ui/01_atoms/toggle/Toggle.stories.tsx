@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Toggle } from "./Toggle";
 
@@ -10,4 +10,12 @@ export default {
 
 const Template = (args) => <Toggle {...args} />;
 
-export const Primary = Template.bind({});
+export const Active = Template.bind({});
+Active.args = {
+    isToggled: true,
+};
+
+export const Inactive = Template.bind({});
+Inactive.args = {
+    isToggled: false,
+}

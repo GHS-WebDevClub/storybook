@@ -11,23 +11,25 @@ import "./Toggle.css";
 
 interface ToggleProps {
     handleToggle: (boolean) => void;
-    state?: boolean;
+    isToggled?: boolean;
 }
 
-export const Toggle = ({ handleToggle, state }: ToggleProps) => {
-    const [loading, setLoading] = useState(false);
+export const Toggle = ({ handleToggle, isToggled }: ToggleProps) => {
+    const [isLoading, setLoading] = useState(false);
 
     async function handleClick() {
         setLoading(true);
-        handleToggle(!state);
+        handleToggle(!isToggled);
     }
 
-    useEffect
+    useEffect(() => {
+        setLoading(isToggled);
+    }, [isToggled])
 
   return (
-    <div onClick={() => { handleToggle() }} className={[ "toggle-base",  ].join(" ")}>
-      <div className={[ "toggle-center" ].join(" ")}>
-
+    <div onClick={() => { handleClick() }} className={[ "toggle-base",  ].join(" ")}>
+      <div className={[ "toggle-center", isLoading ? "toggle-center--loading" : "" ].join(" ")}>
+        
       </div>
     </div>
   );
