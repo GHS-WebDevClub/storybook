@@ -8,15 +8,42 @@ import React, { useEffect, useState } from "react";
  *
  */
 
-interface ToggleProps {
+export interface ToggleProps {
   /** Function handling toggle interaction */
   handleToggle: (boolean) => void;
   /** Current state of toggle; true = right */
   isToggled?: boolean;
+  /** Set the size of the component */
+  size?: "small" | "large" | "default";
 }
 
-export const Toggle = ({ handleToggle, isToggled }: ToggleProps) => {
+export const Toggle = ({
+  handleToggle,
+  isToggled,
+  size = "default",
+}: ToggleProps) => {
   const [isLoading, setLoading] = useState(false);
+
+  const sizes = {
+    default: {
+      w: "20",
+      h: "12",
+      translation: "8",
+      margin: "1",
+    },
+    large: {
+      w: 0,
+      h: 0,
+      translation: 0,
+      margin: 0,
+    },
+    small: {
+      w: 0,
+      h: 0,
+      translation: 0,
+      margin: 0,
+    },
+  };
 
   async function handleClick() {
     setLoading(true);
@@ -32,13 +59,16 @@ export const Toggle = ({ handleToggle, isToggled }: ToggleProps) => {
       onClick={() => {
         handleClick();
       }}
-      className="bg"
+      className={`h-${sizes[size].h} w-${sizes[size].w} rounded-full bg-slate-800 flex items-center`}
     >
       <div
-        className={[
-          "toggle-center",
-          isLoading ? "toggle-center--loading" : "",
-        ].join(" ")}
+        className={`h-${sizes[size].h} w-${sizes[size].h} rounded-full mx-${
+          sizes[size].margin
+        } ${
+          isToggled
+            ? `bg-green-400 translate-x-${sizes[size].translation}`
+            : "bg-red-400"
+        }`}
       ></div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Toggle } from "./Toggle";
+import { Toggle, ToggleProps } from "./Toggle";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -8,14 +8,24 @@ export default {
   component: Toggle,
 };
 
-const Template = (args) => <Toggle {...args} />;
+const Template = (args: ToggleProps) => <Toggle {...args} />;
 
 export const Active = Template.bind({});
 Active.args = {
-    isToggled: true,
+  isToggled: true,
 };
 
 export const Inactive = Template.bind({});
 Inactive.args = {
-    isToggled: false,
-}
+  isToggled: false,
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  size: "large",
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  size: "small",
+};
