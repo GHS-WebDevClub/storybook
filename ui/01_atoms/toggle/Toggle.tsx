@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 
 /**
  * Primary UI component for user boolean input
@@ -10,66 +11,52 @@ import React, { useEffect, useState } from "react";
 
 export interface ToggleProps {
   /** Function handling toggle interaction */
-  handleToggle: (boolean) => void;
+  handleToggle: () => void;
   /** Current state of toggle; true = right */
-  isToggled?: boolean;
+  checked?: boolean;
   /** Set the size of the component */
   size?: "small" | "large" | "default";
 }
 
 export const Toggle = ({
   handleToggle,
-  isToggled,
+  checked,
   size = "default",
 }: ToggleProps) => {
-  const [isLoading, setLoading] = useState(false);
-
-  const sizes = {
-    default: {
-      w: "20",
-      h: "12",
-      translation: "8",
-      margin: "1",
-    },
-    large: {
-      w: 0,
-      h: 0,
-      translation: 0,
-      margin: 0,
-    },
-    small: {
-      w: 0,
-      h: 0,
-      translation: 0,
-      margin: 0,
-    },
-  };
-
-  async function handleClick() {
-    setLoading(true);
-    handleToggle(!isToggled);
-  }
-
-  useEffect(() => {
-    setLoading(isToggled);
-  }, [isToggled]);
-
   return (
-    <div
-      onClick={() => {
-        handleClick();
-      }}
-      className={`h-${sizes[size].h} w-${sizes[size].w} rounded-full bg-slate-800 flex items-center`}
-    >
-      <div
-        className={`h-${sizes[size].h} w-${sizes[size].h} rounded-full mx-${
-          sizes[size].margin
-        } ${
-          isToggled
-            ? `bg-green-400 translate-x-${sizes[size].translation}`
-            : "bg-red-400"
-        }`}
-      ></div>
-    </div>
+    <Base>
+      <Checkbox />
+      <Center
+        onClick={() => {
+          handleToggle();
+        }}
+      />
+    </Base>
   );
 };
+
+const Center = styled.div`
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #f2f2f7;
+  border-radius: 10rem;
+`;
+
+const Checkbox = styled.input.attrs({ type: "checkbox" })`
+  opacity: 0;
+  cursor: pointer;
+`;
+
+const Base = styled.span`
+  ${Checkbox}:checked + ${Center} {
+    margin-left: auto;
+  }
+
+  width: 5rem;
+  height: 3rem;
+  background: #636366;
+  border-radius: 10rem;
+
+  display: flex;
+  align-items: center;
+`;

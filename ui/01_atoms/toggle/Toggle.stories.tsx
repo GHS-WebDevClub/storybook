@@ -19,13 +19,3 @@ export const Inactive = Template.bind({});
 Inactive.args = {
   isToggled: false,
 };
-
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-};

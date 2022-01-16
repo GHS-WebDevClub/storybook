@@ -32,7 +32,7 @@ module.exports = {
      */
     config.resolve.alias = {
       ...config.resolve?.alias,
-      '@': [path.resolve(__dirname, '../src/'), path.resolve(__dirname, '../')],
+      '@': [path.resolve(__dirname, '../ui/'), path.resolve(__dirname, '../')],
     };
 
     /**
@@ -40,7 +40,7 @@ module.exports = {
      * @see https://github.com/storybookjs/storybook/issues/12844#issuecomment-867544160
      */
     config.resolve.roots = [
-      path.resolve(__dirname, '../public'),
+      path.resolve(__dirname, '../ui/assets/'),
       'node_modules',
     ];
 
