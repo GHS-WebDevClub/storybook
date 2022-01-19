@@ -35,28 +35,59 @@ export const Toggle = ({
   );
 };
 
-const Center = styled.div`
-  width: 2.5rem;
-  height: 2.5rem;
-  background: #f2f2f7;
-  border-radius: 10rem;
+const Center = styled.span`
+  // width: 2.5rem;
+  // height: 2.5rem;
+  background: #e2e2e2;
+  border-radius: 34px;
+
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+
+  {Center}:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+  }
 `;
 
 const Checkbox = styled.input.attrs({ type: "checkbox" })`
   opacity: 0;
   cursor: pointer;
+  width: 0;
+  height: 0;
 `;
 
-const Base = styled.span`
+const Base = styled.label`
   ${Checkbox}:checked + ${Center} {
-    margin-left: auto;
+    background-color: #2196F3;
   }
 
-  width: 5rem;
-  height: 3rem;
-  background: #636366;
-  border-radius: 10rem;
+  ${Checkbox}:focus + ${Center} {
+    box-shadow: 0 0 1px #2196F3;
+  }
 
-  display: flex;
-  align-items: center;
+  ${Checkbox}:checked + ${Center}:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 `;
