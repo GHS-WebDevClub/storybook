@@ -36,27 +36,30 @@ export const Toggle = ({
 };
 
 const Center = styled.div`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
   background: #f2f2f7;
   border-radius: 10rem;
+  margin: 0.1rem;
+  transition: 0.3ms;
 `;
 
 const Checkbox = styled.input.attrs({ type: "checkbox" })`
-  opacity: 0;
   cursor: pointer;
+  display: none;
 `;
 
-const Base = styled.span`
+const Base = styled.label`
   ${Checkbox}:checked + ${Center} {
-    margin-left: auto;
+    margin-left: 2.1rem;
   }
 
   width: 5rem;
   height: 3rem;
   background: #636366;
   border-radius: 10rem;
+  display: inline-block;
+  padding: 0;
 
-  display: flex;
-  align-items: center;
+  cursor: pointer;
 `;
