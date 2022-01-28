@@ -3,8 +3,11 @@
 # Workflow name
 name: 'Chromatic'
 
-# Event for the workflow
-on: push
+# 👇 Workflow event to trigger execution
+on:
+  push:
+    branches-ignore:
+      - "example" # 👈 Excludes the example branch
 
 # List of jobs
 jobs:
