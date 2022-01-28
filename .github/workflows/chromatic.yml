@@ -8,9 +8,6 @@ on:
   push:
     branches-ignore:
       - "example" # 👈 Excludes the example branch
-  pull-request:
-    branches-ignore:
-      - "example" # 👈 Excludes the example branch
 
 # List of jobs
 jobs:
