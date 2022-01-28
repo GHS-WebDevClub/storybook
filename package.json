@@ -8,7 +8,8 @@
     "post-update": "yarn upgrade --latest",
     "storybook": "start-storybook -p 3000",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=a6d71de0370d"
+    "chromatic": "npx chromatic --project-token=a6d71de0370d",
+    "release": "auto shipit --base-branch=main"
   },
   "dependencies": {
     "@types/react": "^17.0.38",
@@ -28,6 +29,7 @@
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/react": "^6.4.9",
+    "auto": "^10.32.6",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.3.4"
   }
