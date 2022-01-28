@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 /**
- * Primary UI component for user boolean input.
+ * Primary UI component for user boolean input...
  *
  * Created by Aubin Spitzer according to Issue #11
  * https://github.com/aubincspitzer/wdc-storybook/issues/11
