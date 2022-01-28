@@ -8,7 +8,7 @@
     "post-update": "yarn upgrade --latest",
     "storybook": "start-storybook -p 3000",
     "build-storybook": "build-storybook",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "npx chromatic --project-token=a6d71de0370d"
   },
   "dependencies": {
     "@types/react": "^17.0.38",
