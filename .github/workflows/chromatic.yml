@@ -1,11 +1,14 @@
 # .github/workflows/chromatic.yml
 
 # Workflow name
-name: 'Chromatic'
+name: "Chromatic"
 
 # 👇 Workflow event to trigger execution
 on:
   push:
+    branches-ignore:
+      - "example" # 👈 Excludes the example branch
+  pull-request:
     branches-ignore:
       - "example" # 👈 Excludes the example branch
 
