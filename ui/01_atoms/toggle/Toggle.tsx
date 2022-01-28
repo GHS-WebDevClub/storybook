@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 /**
@@ -10,56 +10,89 @@ import styled from "styled-components";
  */
 
 export interface ToggleProps {
-  /** Function handling toggle interaction */
-  handleToggle: () => void;
-  /** Current state of toggle; true = right */
+  /** Function handling toggle interaction, promise so we can wait for completion */
+  handleToggle?: (boolean) => Promise<void>;
+  /** Current state of toggle; true = right = active */
   checked?: boolean;
-  /** Set the size of the component */
-  size?: "small" | "large" | "default";
+  /** Whether the component is interactable or not */
+  disabled?: boolean;
 }
 
-export const Toggle = ({
-  handleToggle,
-  checked,
-  size = "default",
-}: ToggleProps) => {
+export const Toggle = ({ handleToggle, checked, disabled }: ToggleProps) => {
+  const [isChecked, setChecked] = useState<boolean>(checked); //Controlled Checkbox state
+  const [isLoading, setLoading] = useState<boolean>(false); //Whether we are waiting for an interaction to be handled
+
+  async function handleChange() {
+    if (isLoading) return; //don't allow interact if already loading
+
+    await setLoading(true); //prevent interact and bg change
+    await setChecked(!isChecked); //update state to move center
+    try {
+      if (handleToggle) await handleToggle(isChecked); //Handle the action meant to take place and wait for it to finish
+    } catch (err) {
+      console.log(err);
+      setChecked(!isChecked); //If the action fails, revert to original state
+    }
+
+    setLoading(false); //Allow interact and base bg to match state
+  }
+
   return (
-    <Base>
-      <Checkbox />
-      <Center
-        onClick={() => {
-          handleToggle();
-        }}
+    <Base disabled={disabled} showActiveBg={isLoading ? !isChecked : isChecked}>
+      <Checkbox
+        onChange={() => handleChange()}
+        checked={isChecked}
+        disabled={disabled}
       />
+      <Center />
     </Base>
   );
 };
 
+/** TOGGLE SWITCH CENTER */
 const Center = styled.div`
-  width: 2.8rem;
-  height: 2.8rem;
+  //0.1 (margin) * 2 less than the height
+  width: 1.4rem;
+  height: 1.4rem;
   background: #f2f2f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 10rem;
   margin: 0.1rem;
-  transition: 0.3ms;
+
+  /** Standard 300ms transition on all properties */
+  transition: 0.3s;
 `;
 
+
+/** INVISIBLE CHECKBOX */
 const Checkbox = styled.input.attrs({ type: "checkbox" })`
-  cursor: pointer;
   display: none;
 `;
 
-const Base = styled.label`
+
+/** BASE */
+interface BaseProps {
+  disabled?: boolean;
+  /** Should the BG reflect the Center's state? */
+  showActiveBg: boolean;
+}
+const Base = styled.label<BaseProps>`
+  /**
+   * This moves the switch center based on the checkbox value.
+   * We can click on the Base to check the checkbox because it is the containing label.
+  */
   ${Checkbox}:checked + ${Center} {
-    margin-left: 2.1rem;
+    margin-left: 1.1rem;
   }
 
-  width: 5rem;
-  height: 3rem;
-  background: #636366;
+  width: 2.6rem;
+  height: 1.6rem;
+  background: ${(props) => (props.showActiveBg ? "#30D158" : "#636366")};
+  opacity: ${(props) => (props.disabled ? "0.6" : "1")};
   border-radius: 10rem;
   display: inline-block;
   padding: 0;
+  transition: 0.3s;
 
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "default" : "pointer")};
 `;

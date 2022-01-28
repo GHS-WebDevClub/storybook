@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { Toggle, ToggleProps } from "./Toggle";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Atoms/Toggle",
   component: Toggle,
@@ -12,10 +11,24 @@ const Template = (args: ToggleProps) => <Toggle {...args} />;
 
 export const Active = Template.bind({});
 Active.args = {
-  isToggled: true,
+  checked: true,
+  disabled: false,
+  /** Used to demonstrate behavior when a function maybe take a second to complete */
+  handleToggle: () => { 
+    return new Promise<void>((resolve, reject) => {
+      setTimeout(() => { resolve() }, 1000);
+    })
+   }
 };
 
 export const Inactive = Template.bind({});
 Inactive.args = {
-  isToggled: false,
+  checked: false,
+  disabled: false,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  checked: false,
+  disabled: true,
 };
