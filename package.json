@@ -37,7 +37,7 @@
     "@types/styled-components": "^5.1.20",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
-    "chromatic": "^6.4.1"
+    "chromatic": "^6.4.1",
     "auto": "^10.32.6",
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3"
