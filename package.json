@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "start-storybook -p 3000",
-    "build": "build-storybook",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "start": "start-storybook -p 3000",
     "post-update": "yarn upgrade --latest",
     "storybook": "start-storybook -p 3000",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=a6d71de0370d"
+    "chromatic": "npx chromatic --project-token=a6d71de0370d",
+    "release": "auto shipit --base-branch=main"
   },
   "dependencies": {
     "@types/react": "^17.0.38",
@@ -24,6 +25,7 @@
   ],
   "description": "A \"Hello World\" application with multiple pages that shows how Next.js routing works.",
   "devDependencies": {
+    "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.7",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
@@ -36,5 +38,8 @@
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.4.1"
+    "auto": "^10.32.6",
+    "babel-loader": "^8.2.3",
+    "cross-env": "^7.0.3"
   }
 }
