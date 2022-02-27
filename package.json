@@ -1,6 +1,6 @@
 {
-  "name": "nextjs",
-  "version": "1.0.0",
+  "name": "@ghs-wdc/storybook",
+  "version": "0.1.0",
   "scripts": {
     "dev": "start-storybook -p 3000",
     "build": "cross-env BABEL_ENV=production babel src -d dist",
@@ -19,13 +19,13 @@
     "sb": "^6.4.12",
     "styled-components": "^5.3.3"
   },
-  "license": "MIT",
+  "license": "UNLICENSED",
   "keywords": [
     "next"
   ],
-  "description": "A \"Hello World\" application with multiple pages that shows how Next.js routing works.",
+  "description": "Garfield HS Seattle - Web Dev Club - Design System",
   "devDependencies": {
-    "@babel/cli": "^7.16.8",
+    "@babel/cli": "^7.17.6",
     "@babel/core": "^7.16.7",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
@@ -35,11 +35,25 @@
     "@storybook/manager-webpack5": "^6.4.12",
     "@storybook/react": "^6.4.9",
     "@types/styled-components": "^5.1.20",
+    "auto": "^10.32.6",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
+    "babel-preset-react-app": "^10.0.1",
     "chromatic": "^6.4.1",
-    "auto": "^10.32.6",
-    "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3"
-  }
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
+  "main": "dist/index.js",
+  "repository": "https://github.com/GHS-WebDevClub/storybook.git",
+  "author": "Untethered Dev. <hello@uthd.dev>",
+  "private": false
 }

@@ -6,7 +6,7 @@ import styled from "styled-components";
  *
  * Created by Aubin Spitzer according to Issue #11
  * https://github.com/aubincspitzer/wdc-storybook/issues/11
- *
+ * .
  */
 
 export interface ToggleProps {
@@ -25,8 +25,8 @@ export const Toggle = ({ handleToggle, checked, disabled }: ToggleProps) => {
   async function handleChange() {
     if (isLoading) return; //don't allow interact if already loading
 
-    await setLoading(true); //prevent interact and bg change
-    await setChecked(!isChecked); //update state to move center
+    setLoading(true); //prevent interact and bg change
+    setChecked(!isChecked); //update state to move center
     try {
       if (handleToggle) await handleToggle(isChecked); //Handle the action meant to take place and wait for it to finish
     } catch (err) {
