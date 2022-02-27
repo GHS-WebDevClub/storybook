@@ -2,6 +2,20 @@
 
 #### ⚠️ Pushed to `main`
 
+- Prepared for proper release (aubin@uthd.dev)
+- v0.1.2 ([@uthd-dev](https://github.com/uthd-dev))
+
+#### Authors: 2
+
+- [@uthd-dev](https://github.com/uthd-dev)
+- Aubin C. Spitzer (aubin@uthd.dev)
+
+---
+
+# v0.1.3 (Sun Feb 27 2022)
+
+#### ⚠️ Pushed to `main`
+
 - v0.1.2 ([@uthd-dev](https://github.com/uthd-dev))
 
 #### Authors: 1
