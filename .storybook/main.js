@@ -1,8 +1,13 @@
+// .storybook/main.js
+
+const path = require("path");
+
 module.exports = {
-  stories: [
-    "../ui/**/*.stories.mdx",
-    "../ui/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
+  stories: ["../ui/**/*.stories.mdx", "../ui/**/*.stories.@(js|jsx|ts|tsx)"],
+  /** Expose public folder to storybook as static */
+  staticDirs: ["../ui/assets"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
-  framework: "@storybook/react"
+  core: {
+    builder: "webpack5",
+  },
 };
