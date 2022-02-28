@@ -3,7 +3,7 @@
   "version": "0.1.8",
   "scripts": {
     "dev": "start-storybook -p 3000",
-    "build": "cross-env BABEL_ENV=production babel ui -d dist",
+    "build": "tsc ui/01_atoms/**/*.tsx ui/02_molecules/**/*.tsx ui/03_compounds/**/*.tsx ui/index.ts --declaration --jsx react-jsx --outDir dist --esModuleInterop",
     "start": "start-storybook -p 3000",
     "post-update": "yarn upgrade --latest",
     "storybook": "start-storybook -p 3000",
@@ -40,19 +40,16 @@
     "babel-loader": "^8.2.3",
     "babel-preset-react-app": "^10.0.1",
     "chromatic": "^6.4.1",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "typescript": "^4.5.5"
   },
   "babel": {
     "presets": [
-      [
-        "react-app",
-        {
-          "absoluteRuntime": false
-        }
-      ]
+      "@babel/preset-typescript"
     ]
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/GHS-WebDevClub/storybook.git",
   "author": "Untethered Dev. <hello@uthd.dev>",
   "private": false
