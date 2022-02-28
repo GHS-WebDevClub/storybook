@@ -1,3 +1,20 @@
+# v0.1.3 (Mon Feb 28 2022)
+
+#### ⚠️ Pushed to `main`
+
+- testing automated CI release ([@uthd-dev](https://github.com/uthd-dev))
+- v0.1.6 ([@uthd-dev](https://github.com/uthd-dev))
+- v0.1.66 ([@uthd-dev](https://github.com/uthd-dev))
+- v0.1.5 ([@uthd-dev](https://github.com/uthd-dev))
+- Prepared for proper release ([@uthd-dev](https://github.com/uthd-dev))
+- v0.1.2 ([@uthd-dev](https://github.com/uthd-dev))
+
+#### Authors: 1
+
+- [@uthd-dev](https://github.com/uthd-dev)
+
+---
+
 # v0.1.3 (Sun Feb 27 2022)
 
 #### ⚠️ Pushed to `main`
