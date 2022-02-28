@@ -1,6 +1,6 @@
 {
   "name": "@ghs-wdc/storybook",
-  "version": "0.1.8",
+  "version": "0.1.13",
   "scripts": {
     "dev": "start-storybook -p 3000",
     "build": "cross-env BABEL_ENV=production babel ui -d dist",
