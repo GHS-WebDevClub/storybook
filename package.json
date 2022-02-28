@@ -3,7 +3,7 @@
   "version": "0.1.13",
   "scripts": {
     "dev": "start-storybook -p 3000",
-    "build": "tsc ui/01_atoms/**/*.tsx ui/02_molecules/**/*.tsx ui/03_compounds/**/*.tsx ui/index.ts --declaration --jsx react-jsx --outDir dist --esModuleInterop",
+    "build": "tsc ui/01_atoms/**/*.tsx ui/index.ts --declaration --jsx react-jsx --outDir dist --esModuleInterop",
     "start": "start-storybook -p 3000",
     "post-update": "yarn upgrade --latest",
     "storybook": "start-storybook -p 3000",
