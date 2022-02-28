@@ -6,7 +6,7 @@ import styled from "styled-components";
  *
  * Created by Aubin Spitzer according to Issue #11
  * https://github.com/aubincspitzer/wdc-storybook/issues/11
- * .
+ * 
  */
 
 export interface ToggleProps {
