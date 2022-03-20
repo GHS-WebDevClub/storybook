@@ -1,6 +1,6 @@
 {
   "name": "@ghs-wdc/storybook",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "scripts": {
     "dev": "start-storybook -p 3000",
     "build": "tsc ui/01_atoms/**/*.tsx ui/index.ts --declaration --jsx react-jsx --outDir dist --esModuleInterop",
