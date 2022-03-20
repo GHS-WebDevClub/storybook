@@ -1,3 +1,15 @@
+# v0.1.15 (Sun Mar 20 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### Authors: 1
+
+- [@aubincspitzer](https://github.com/aubincspitzer)
+
+---
+
 # v0.1.14 (Mon Feb 28 2022)
 
 #### ⚠️ Pushed to `main`
