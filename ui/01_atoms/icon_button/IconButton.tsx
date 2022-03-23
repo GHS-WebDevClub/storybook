@@ -21,9 +21,10 @@ export interface IconButtonProps {
     Icon?: SvgIconComponent;
     action?: () => Promise<boolean | undefined>
     animationCallback?: () => Promise<void>;
+    disabled?: boolean;
 }
 
-export const IconButton = ({ primary, action, animationCallback, Icon }: IconButtonProps) => {
+export const IconButton = ({ primary, disabled, action, animationCallback, Icon }: IconButtonProps) => {
     const [status, setStatus] = useState<"loading" | "fail" | "success" | "ready">("ready");
 
     async function handleClick() {
@@ -52,7 +53,7 @@ export const IconButton = ({ primary, action, animationCallback, Icon }: IconBut
     }
 
     return (
-        <Base primary={primary} status={status} onClick={() => handleClick()}>
+        <Base disabled={disabled} primary={primary} status={status} onClick={() => handleClick()}>
             {getContent()}
         </Base>
     );
@@ -80,6 +81,10 @@ const Base = styled.button<{ primary?: boolean, status?: "fail" | "success" | "l
     svg {
         ${(props) => props.status == "loading" ? "color: #f2f2f7;" : ""}
     }
+
+    ${(props) => { 
+        if(props.disabled) return "opacity: 75%; cursor: default;"
+     }}
 `;
 
 const IconContainer = styled.div<{ status?: "ready" | "fail" | "success" | "loading" }>`

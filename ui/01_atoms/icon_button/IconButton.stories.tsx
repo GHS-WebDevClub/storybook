@@ -7,12 +7,12 @@ export default {
 
 const Template = (args: IconButtonProps) => <IconButton {...args} />;
 
-export const Primary = Template.bind({  })
+export const Primary = Template.bind({})
 Primary.args = {
     primary: true
 }
 
-export const Secondary = Template.bind({  })
+export const Secondary = Template.bind({})
 
 export const Fails = Template.bind({});
 Fails.args = {
@@ -28,5 +28,11 @@ Succeeds.args = {
     action: () => new Promise((res, rej) => {
         setTimeout(() => { res(true) }, 2000)
     })
+}
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    primary: true,
+    disabled: true
 }
 
