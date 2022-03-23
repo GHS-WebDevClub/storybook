@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import { Toggle, ToggleProps } from "./Toggle";
 
 export default {
