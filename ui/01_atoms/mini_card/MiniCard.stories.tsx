@@ -1,3 +1,4 @@
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react"
 
 import { MiniCard, MiniCardProps } from "./MiniCard";
@@ -5,9 +6,9 @@ import { MiniCard, MiniCardProps } from "./MiniCard";
 export default {
     title: "Atoms/MiniCard",
     component: MiniCard,
-};
+} as ComponentMeta<typeof MiniCard>;
 
-const Template = (args: MiniCardProps) => <MiniCard {...args} />;
+const Template: ComponentStory<typeof MiniCard> = (args: MiniCardProps) => <MiniCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

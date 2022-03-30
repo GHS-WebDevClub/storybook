@@ -34,7 +34,7 @@ export const MiniCard = ({ title, subtitle, secSubtitle, Icon, action, iconColor
     }
 
     return (
-        <Base iconColor={iconColor} Icon={Icon} onClick={() => action()}>
+        <Base iconColor={iconColor} Icon={Icon} onClick={() => action ? action() : ""}>
             <p><span>{title}</span> {subtitle}</p>
             <Container>
                 <p>{secSubtitle}</p>
