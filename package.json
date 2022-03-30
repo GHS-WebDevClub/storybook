@@ -1,6 +1,6 @@
 {
   "name": "@ghs-wdc/storybook",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "scripts": {
     "dev": "start-storybook -p 3000",
     "build": "tsc",
