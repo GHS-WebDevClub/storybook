@@ -11,7 +11,7 @@ import styled from "styled-components";
 
 export interface ToggleProps {
   /** Function handling toggle interaction, promise so we can wait for completion */
-  handleToggle?: (boolean) => Promise<void>;
+  handleToggle?: (arg0: boolean) => Promise<void>;
   /** Current state of toggle; true = right = active */
   checked?: boolean;
   /** Whether the component is interactable or not */
@@ -19,7 +19,7 @@ export interface ToggleProps {
 }
 
 export const Toggle = ({ handleToggle, checked, disabled }: ToggleProps) => {
-  const [isChecked, setChecked] = useState<boolean>(checked); //Controlled Checkbox state
+  const [isChecked, setChecked] = useState<boolean>(checked ? true : false); //Controlled Checkbox state
   const [isLoading, setLoading] = useState<boolean>(false); //Whether we are waiting for an interaction to be handled
 
   async function handleChange() {

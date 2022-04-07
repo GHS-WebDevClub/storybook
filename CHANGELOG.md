@@ -1,3 +1,33 @@
+# v0.1.16 (Wed Mar 30 2022)
+
+#### 🐛 Bug Fix
+
+- Added MiniCard component [#11](https://github.com/GHS-WebDevClub/storybook/pull/11) ([@aubincspitzer](https://github.com/aubincspitzer))
+- Completion of IconButton component [#9](https://github.com/GHS-WebDevClub/storybook/pull/9) ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### ⚠️ Pushed to `main`
+
+- Fixes for TS compilation ([@aubincspitzer](https://github.com/aubincspitzer))
+- Update yarn.lock ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### Authors: 1
+
+- [@aubincspitzer](https://github.com/aubincspitzer)
+
+---
+
+# v0.1.15 (Sun Mar 20 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### Authors: 1
+
+- [@aubincspitzer](https://github.com/aubincspitzer)
+
+---
+
 # v0.1.14 (Mon Feb 28 2022)
 
 #### ⚠️ Pushed to `main`

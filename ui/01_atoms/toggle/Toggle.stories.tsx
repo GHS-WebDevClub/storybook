@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Toggle, ToggleProps } from "./Toggle";
 
 export default {
   title: "Atoms/Toggle",
   component: Toggle,
-};
+} as ComponentMeta<typeof Toggle>
 
-const Template = (args: ToggleProps) => <Toggle {...args} />;
+const Template: ComponentStory<typeof Toggle> = (args: ToggleProps) => <Toggle {...args} />;
 
 export const Active = Template.bind({});
 Active.args = {
