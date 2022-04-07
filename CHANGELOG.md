@@ -1,3 +1,15 @@
+# v0.1.17 (Thu Apr 07 2022)
+
+#### 🐛 Bug Fix
+
+- Completed TextInput v1 [#13](https://github.com/GHS-WebDevClub/storybook/pull/13) ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### Authors: 1
+
+- [@aubincspitzer](https://github.com/aubincspitzer)
+
+---
+
 # v0.1.16 (Wed Mar 30 2022)
 
 #### 🐛 Bug Fix
