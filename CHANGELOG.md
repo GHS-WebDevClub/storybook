@@ -1,3 +1,16 @@
+# v0.1.19 (Thu Apr 14 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/GHS-WebDevClub/storybook ([@aubincspitzer](https://github.com/aubincspitzer))
+- Fixed tsconfig for not emitting transpiled code ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### Authors: 1
+
+- [@aubincspitzer](https://github.com/aubincspitzer)
+
+---
+
 # v0.1.18 (Thu Apr 14 2022)
 
 #### ⚠️ Pushed to `main`
