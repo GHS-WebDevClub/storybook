@@ -1,3 +1,15 @@
+# v0.1.18 (Thu Apr 14 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Added TextInput to be accessible from NPM package ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### Authors: 1
+
+- [@aubincspitzer](https://github.com/aubincspitzer)
+
+---
+
 # v0.1.17 (Thu Apr 07 2022)
 
 #### 🐛 Bug Fix
