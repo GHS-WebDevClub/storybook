@@ -7,7 +7,6 @@
  * Created by Aubin C. Spitzer (@aubincspitzer) on 03/22/2022
  */
 
-import { useState } from "react";
 import styled from "styled-components";
 import SendIcon from '@mui/icons-material/Send';
 import AddIcon from '@mui/icons-material/Add';
@@ -19,41 +18,25 @@ import CircularProgress from '@mui/material/CircularProgress';
 export interface IconButtonProps {
     primary?: boolean;
     Icon?: SvgIconComponent;
-    action?: () => Promise<boolean | undefined>
     animationCallback?: () => Promise<void>;
+    status: "ready" | "loading" | "fail" | "success";
     disabled?: boolean;
 }
 
-export const IconButton = ({ primary, disabled, action, animationCallback, Icon }: IconButtonProps) => {
-    const [status, setStatus] = useState<"loading" | "fail" | "success" | "ready">("ready");
+export const IconButton = ({ primary, disabled, status, animationCallback, Icon }: IconButtonProps) => {
 
-    async function handleClick() {
-        if (status !== "ready") return;
-        if (!primary) return action ? action() : ""
-
-        setStatus("loading");
-
-        try {
-            const result = action ? await action() : "";
-            if (!result) setStatus("fail");
-            else setStatus("success");
-        } catch (err) {
-            console.log(err);
-            setStatus("fail")
-        }
-    }
 
     function getContent() {
         switch (status) {
             case "loading": return <CircularProgress style={{ width: "45%", height: "45%" }} color="inherit" />;
-            case "fail": return <IconContainer onAnimationEnd={() => setStatus("ready")}><CancelOutlinedIcon /></IconContainer>;
-            case "success": return <IconContainer onAnimationEnd={async () => { if (animationCallback) await animationCallback(); setStatus("ready") }}><CheckCircleOutlinedIcon /> </IconContainer>;
+            case "fail": return <IconContainer onAnimationEnd={animationCallback}><CancelOutlinedIcon /></IconContainer>;
+            case "success": return <IconContainer onAnimationEnd={animationCallback}><CheckCircleOutlinedIcon /> </IconContainer>;
             case "ready": return Icon ? <Icon /> : (primary ? <SendIcon /> : <AddIcon />);
         }
     }
 
     return (
-        <Base disabled={disabled} primary={primary} status={status} onClick={() => handleClick()}>
+        <Base disabled={disabled} primary={primary} status={status}>
             {getContent()}
         </Base>
     );

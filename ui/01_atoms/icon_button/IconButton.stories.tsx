@@ -8,32 +8,27 @@ export default {
 
 const Template: ComponentStory<typeof IconButton> = (args: IconButtonProps) => <IconButton {...args} />;
 
-export const Primary = Template.bind({})
-Primary.args = {
-    primary: true
+export const Success = Template.bind({})
+Success.args = {
+    primary: true,
+    status: "success"
 }
 
-export const Secondary = Template.bind({})
-
-export const Fails = Template.bind({});
-Fails.args = {
+export const Fail = Template.bind({});
+Fail.args = {
     primary: true,
-    action: () => new Promise((res, rej) => {
-        setTimeout(() => { res(false) }, 2000)
-    })
+    status: "fail"
 }
 
-export const Succeeds = Template.bind({});
-Succeeds.args = {
+export const Loading = Template.bind({});
+Loading.args = {
     primary: true,
-    action: () => new Promise((res, rej) => {
-        setTimeout(() => { res(true) }, 2000)
-    })
+    status: "loading"
 }
 
-export const Disabled = Template.bind({});
-Disabled.args = {
+export const Ready = Template.bind({});
+Ready.args = {
     primary: true,
-    disabled: true
+    status: "ready"
 }
 

@@ -8,7 +8,7 @@ import styled from "styled-components";
  *
  */
 
-export const TextInput = styled.input`
+export const TextInput = styled.input<{ error?: string }>`
   height: 2.5rem;
   width: 100%;
   max-width: 20rem;
@@ -18,17 +18,12 @@ export const TextInput = styled.input`
   border: none;
   outline: none;
   padding: 0 1rem;
-  border: 1px solid #3a3a3c;
+  border: 1px solid ${(props) => props.error ? "#FF3B44" : "#3a3a3c"};
   transition: 300ms;
 
   :focus {
     background: #1c1c1e;
-    border: 1px solid #f2f2f7;
+    border: 1px solid ${(props) => props.error ? "#FF3B44" : "#f2f2f7"};
     ${(props) => (props.placeholder = "")}
-  }
-
-  ::before {
-    content: ${(props) => props.placeholder};
-    color: #f2f2f7;
   }
 `;

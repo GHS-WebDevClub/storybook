@@ -20,3 +20,8 @@ export const Filled = Template.bind({});
 Filled.args = {
   value: "johndoe",
 };
+
+export const Errored = Template.bind({  });
+Errored.args = {
+  error: "Incorrect username!"
+}
