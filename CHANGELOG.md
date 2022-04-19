@@ -1,3 +1,15 @@
+# v0.1.22 (Tue Apr 19 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Add TextInput error prop & rm IconButton useState ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### Authors: 1
+
+- [@aubincspitzer](https://github.com/aubincspitzer)
+
+---
+
 # v0.1.21 (Thu Apr 14 2022)
 
 #### ⚠️ Pushed to `main`
