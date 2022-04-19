@@ -8,7 +8,7 @@ import styled from "styled-components";
  *
  */
 
-export const TextInput = styled.input<{ error?: string }>`
+export const TextInput = styled.input<{ error?: boolean }>`
   height: 2.5rem;
   width: 100%;
   max-width: 20rem;
@@ -24,6 +24,5 @@ export const TextInput = styled.input<{ error?: string }>`
   :focus {
     background: #1c1c1e;
     border: 1px solid ${(props) => props.error ? "#FF3B44" : "#f2f2f7"};
-    ${(props) => (props.placeholder = "")}
   }
 `;

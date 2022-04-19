@@ -23,5 +23,5 @@ Filled.args = {
 
 export const Errored = Template.bind({  });
 Errored.args = {
-  error: "Incorrect username!"
+  error: true
 }
