@@ -1,3 +1,16 @@
+# v0.1.23 (Tue Apr 19 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/GHS-WebDevClub/storybook ([@aubincspitzer](https://github.com/aubincspitzer))
+- minor refactoring ([@aubincspitzer](https://github.com/aubincspitzer))
+
+#### Authors: 1
+
+- [@aubincspitzer](https://github.com/aubincspitzer)
+
+---
+
 # v0.1.22 (Tue Apr 19 2022)
 
 #### ⚠️ Pushed to `main`
